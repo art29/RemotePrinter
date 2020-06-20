@@ -24,6 +24,7 @@ mv /home/pi/client/sample_conf.py /home/pi/client/conf.py
 nano /home/pi/client/conf.py
 ```
 (Get the Api Key from OctoPrint's settings and the OAuth ID from asking the Google Assistant "Talk to remote printer" and then "Can I get my user id ?")
+
 7) If using another server than octorgb.com, change the url in client.py
 ```
 nano /home/pi/client/main.py

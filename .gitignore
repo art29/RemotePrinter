@@ -1,0 +1,4 @@
+server/.idea
+server/venv
+server/conf.py
+client/conf.py

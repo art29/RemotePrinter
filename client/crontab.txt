@@ -1,2 +1,0 @@
-@reboot sh /home/pi/client/ngrokLauncher.sh >/home/pi/client/logs/cronlog 2>&1
-@reboot sh /home/pi/client/appLauncher.sh >/home/pi/client/logs/cronlog 2>&1

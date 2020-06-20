@@ -73,9 +73,15 @@ def receive():
                    {'col1': url, 'col2': oauth_id, 'col3': api_key})
     receive_db.commit()
     if cursor.rowcount > 0:
-        return 'Received !'  # response to your request.
+        return 'Received !'  # Update Row
     else:
-        return 'Error has been detected... or maybe the same details were already sent.'
+        cursor.execute("INSERT INTO oauth (url, oauthid, apikey) VALUES (%(col1)s, %(col2)s, %(col3)s);",
+                       {'col1': url, 'col2': oauth_id, 'col3': api_key})
+        receive_db.commit()
+        if cursor.rowcount > 0:
+            return 'Received !'  # Create Row if it isn't found
+        else:
+            return 'Error has been detected... or maybe the same details were already sent.'
 
 
 # Identifying Dialogflow App

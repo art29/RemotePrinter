@@ -5,6 +5,8 @@ import requests
 import time
 from conf import OauthId, ApiKey
 
+url = "https://voice.octorgb.com"
+
 # Getting Ngrok Info
 
 try:
@@ -17,7 +19,7 @@ except:
 # Sending info to server
 
 try:
-    db = requests.post("https://voice.octorgb.com", data={'OauthId': OauthId, 'url': url, 'ApiKey': ApiKey})
+    db = requests.post(url, data={'OauthId': OauthId, 'url': url, 'ApiKey': ApiKey})
     time.sleep(5)
     print(db.text)
 except:

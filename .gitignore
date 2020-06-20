@@ -1,4 +1,5 @@
 server/.idea
+.idea
 server/venv
 server/conf.py
 client/conf.py

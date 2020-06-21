@@ -33,9 +33,23 @@ nano /home/pi/client/main.py
 
 ## Installation (Server)
 
-In progress
-```bash
+**For the server part, make sure you have a Python 3 server with all needed dependencies installed and a domain. I use [Phusion Passenger](https://www.phusionpassenger.com/library/walkthroughs/start/python.html) with Apache, but you can use what suits you better !**
+
+*You also need to make sure that you got a copy of the DialogFlow app to be able to use the server part, you can setup the DialogFlow app using the zip and importing it, you then need to configure Actions on Google, if you need help send me a message !*
+1) Copy the server folder to your desired location on your server
+2) Configure the Python server (If you are not sure how to do that, Digital Ocean have great tutorials)
+3) Install all necessary dependencies (Flask, Flask Assistant, Pymysql, Jose, Requests ...)
+4) Rename the sample_conf.py to conf.py
 ```
+mv sample_conf.py conf.py
+```
+5) Configure the database by modifying the variables in conf.py
+```
+nano conf.py
+```
+6) Setup your clients with your own domain
+7) Your server should be ready to go ! Restart the server and you can test a client !
+
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.

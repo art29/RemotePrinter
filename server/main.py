@@ -10,24 +10,16 @@ import conf
 app = Flask(__name__)
 log = app.logger
 
-
-# Database credentials
-
-host = conf.host
-user = conf.user
-password = conf.password
-database = conf.db
-
 # Connecting to Database to get url
 # Database has a table called oauth with 3 columns (url, oauthid, apikey)
 # You need to input the values in the database manually the first time
 
 def database(userid):
     db = pymysql.connect(
-        host=host,
-        user=user,
-        passwd=password,
-        database=database
+        host=conf.host,
+        user=conf.user,
+        passwd=conf.password,
+        database=conf.db
     )
 
     try:
@@ -60,10 +52,10 @@ def get_user_id(request):
 # Receive new url from a printer
 def receive():
     receive_db = pymysql.connect(
-        host=host,
-        user=user,
-        passwd=password,
-        database=database
+        host=conf.host,
+        user=conf.user,
+        passwd=conf.password,
+        database=conf.db
     )
     url = form_request.form['url']
     oauth_id = form_request.form['OauthId']
@@ -82,7 +74,7 @@ def receive():
             return 'Received !'  # Create Row if it isn't found
         else:
             return 'Error has been detected... or maybe the same details were already sent.'
-
+    db.close()
 
 # Identifying Dialogflow App
 assist = Assistant(app, project_id="test-273da", route='/webhook')

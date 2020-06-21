@@ -50,6 +50,24 @@ nano conf.py
 6) Setup your clients with your own domain
 7) Your server should be ready to go ! Restart the server and you can test a client !
 
+## Use
+**Right now these are the implemented actions :**
+
+* Get User ID
+* Ask for percentage of the print
+* Time left on a print
+* Temperature of the printer
+* Extrude an amount of filament (Ex : "Extrude 50 millimeters")
+* Heat Up the printer (Ex : "Change temperature to 200")
+* Cool off the printer (Ex : "Change temperature to zero")
+* Home axes (Ex : "Home axes", "Home X axis", "Home X and Z axes")
+
+## Update ideas
+
+* Actually have a cool off action ?
+* Be able to see the webcam on a phone or Nest Home Hub for example ? (IDK if it's possible)
+* Set a reminder when the print will be done ?
+* Cancel a print (I don't want to be able to select a print from voice for security measures, someone should always be there to check the print at the beginning)
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.

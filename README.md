@@ -1,6 +1,6 @@
 # RemotePrinter
 
-Remote Printer is an add-on for your 3D Printer, using [OctoPrint](https://octoprint.org/) to control your printer with your voice using the Google Assistant
+Remote Printer is an add-on for your 3D Printer, using [OctoPrint](https://octoprint.org/) to control your printer with your voice using the Google Assistant. This is part of a group of projects that are were created over time, which is called ![](OctoRGB_Logo_Orange.svg).
 
 ## Installation (Client)
 

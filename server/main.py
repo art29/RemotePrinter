@@ -10,7 +10,7 @@ import conf
 app = Flask(__name__)
 log = app.logger
 
-# Connecting to Database to get url
+# Connecting to Database to get url.
 # Database has a table called oauth with 3 columns (url, oauthid, apikey)
 # You need to input the values in the database manually the first time
 
@@ -127,6 +127,23 @@ def change_temperature(temperature):
     return tell(speech)
 
 
+# Cool Off action
+@assist.action("cool-off")
+def cool_off():
+    try:
+        userid = get_user_id(request)
+        url = database(userid)[2] + "/api/printer/tool"
+        headers = {'Content-Type': 'application/json', 'X-Api-Key': database(userid)[3]}
+        payload = {'command': 'target', "targets": {"tool0": 0}}
+        r = requests.post(url, headers=headers, data=json.dumps(payload))
+        if r.status_code != 204:
+            speech = "Error, their is a problem, the printer will not heat up, try to find the problem or try later !"
+        else:
+            speech = "Ok, cooling down"
+    except:
+        speech = "An error has occured, please try later."
+    return tell(speech)
+
 # Extrude filament action
 @assist.action("extrude-filament")
 def extrude_filament(mm):
@@ -234,6 +251,18 @@ def get_temperature():
     except:
         speech = "An error has occured, please try later."
     return tell(speech)
+
+# Get-url action
+@assist.action("get-url")
+def get_temperature():
+    try:
+        userid = get_user_id(request)
+        url = database(userid)[2]
+        speech = "The url is " + url
+    except:
+        speech = "An error has occured, please try later."
+    return tell(speech)
+
 
 
 if __name__ == '__main__':

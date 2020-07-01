@@ -59,12 +59,11 @@ nano conf.py
 * Temperature of the printer
 * Extrude an amount of filament (Ex : "Extrude 50 millimeters")
 * Heat Up the printer (Ex : "Change temperature to 200")
-* Cool off the printer (Ex : "Change temperature to zero")
+* Cool off the printer (Ex : "Change temperature to zero" or "Cool off")
 * Home axes (Ex : "Home axes", "Home X axis", "Home X and Z axes")
 
 ## Update ideas
 
-* Actually have a cool off action ?
 * Be able to see the webcam on a phone or Nest Home Hub for example ? (IDK if it's possible)
 * Set a reminder when the print will be done ?
 * Cancel a print (I don't want to be able to select a print from voice for security measures, someone should always be there to check the print at the beginning)

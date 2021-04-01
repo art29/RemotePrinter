@@ -1,6 +1,6 @@
 import json
 import requests
-from flask import Flask, jsonify, make_response
+from flask import Flask, jsonify, make_response, render_template
 from flask import request as form_request
 from flask_assistant import Assistant, ask, tell, request
 import pymysql.cursors
@@ -263,7 +263,9 @@ def get_temperature():
         speech = "An error has occured, please try later."
     return tell(speech)
 
-
+@app.route('/privacy')
+def privacy():
+   return render_template('privacy.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

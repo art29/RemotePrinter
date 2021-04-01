@@ -10,6 +10,7 @@ import conf
 app = Flask(__name__)
 log = app.logger
 
+
 # Connecting to Database to get url.
 # Database has a table called oauth with 3 columns (url, oauthid, apikey)
 # You need to input the values in the database manually the first time
@@ -75,6 +76,7 @@ def receive():
         else:
             return 'Error has been detected... or maybe the same details were already sent.'
     db.close()
+
 
 # Identifying Dialogflow App
 assist = Assistant(app, project_id="test-273da", route='/webhook')
@@ -143,6 +145,7 @@ def cool_off():
     except:
         speech = "An error has occured, please try later."
     return tell(speech)
+
 
 # Extrude filament action
 @assist.action("extrude-filament")
@@ -252,6 +255,7 @@ def get_temperature():
         speech = "An error has occured, please try later."
     return tell(speech)
 
+
 # Get-url action
 @assist.action("get-url")
 def get_temperature():
@@ -263,9 +267,11 @@ def get_temperature():
         speech = "An error has occured, please try later."
     return tell(speech)
 
+
 @app.route('/privacy')
 def privacy():
-   return render_template('privacy.html')
+    return render_template('privacy.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)

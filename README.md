@@ -3,7 +3,7 @@
 Remote Printer is an add-on for your 3D Printer, using [OctoPrint](https://octoprint.org/) to control your printer with your voice using the Google Assistant. This is part of a group of projects that are were created over time, which is called ![](OctoRGB_Logo_Orange.svg).
 
 ## Deprication
-The code that is in this repo only works with Dialogflow old's version which is now depricated, it will still work but is not actually supported anymore by google. I will try to upgrade to new ways of doing it in the next few months.
+The code that is in this repo only works with Dialogflow old's version which is now depricated, it will still work but is not actually supported anymore by google. **Sadly, I currently do not have time to update it to the new system that Google is now using. Hopefully, over the next few months or years, I will be able to upgrade it. If you are willing to work on it, don't hesitate to do so by forking this repo, I would love to see this working!**
 
 ## Installation (Client)
 
